@@ -109,7 +109,8 @@
         p:flowRegistry-ref="loginFlowRegistry" p:order="2">
     <property name="interceptors">
       <list>
-        <ref bean="localeChangeInterceptor" />
+        <ref bean="localeChangeInterceptor"/>
+        <ref bean="loginThrottle" />
       </list>
     </property>
   </bean>

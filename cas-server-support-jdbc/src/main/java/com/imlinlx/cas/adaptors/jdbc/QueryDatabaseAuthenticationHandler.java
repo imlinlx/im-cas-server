@@ -35,11 +35,11 @@ public class QueryDatabaseAuthenticationHandler extends AbstractJdbcUsernamePass
 
 		final String username = credential.getUsername();
 
-        //实际使用时,应实现自定义的加密类,默认(this.getPasswordEncoder())是纯文本返回的,也就是不加密
+		// 实际使用时,应实现自定义的加密类,默认(this.getPasswordEncoder())是纯文本返回的,也就是不加密
 		final String encryptedPassword = this.getPasswordEncoder().encode( credential.getPassword() );
 		try {
 
-            // demo
+			// demo
 			this.sql = "select password from " + this.table + " where user_name = ?";
 			// 在这里可以根据具体情况,修改验证逻辑,比如盐值等
 			final String dbPassword = getJdbcTemplate().queryForObject( this.sql, String.class, username );

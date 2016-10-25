@@ -198,4 +198,13 @@
           p:serviceTicketCountWarnThreshold="5000"
           p:sessionCountWarnThreshold="100000" />
     </util:list>
+
+    <!--<bean id="loginThrottle"-->
+    <!--class="com.caiban360.auth.web.support.EhcacheThrottledSubmissionByUsernameHandlerInterceptorAdapter"-->
+    <!--p:cacheManager-ref="springCacheManager"-->
+    <!--p:failureThreshold="${failureThreshold}" />-->
+
+    <bean id="loginThrottle"
+          class="com.imlinlx.auth.web.support.RedisThrottledSubmissionByUsernameHandlerInterceptorAdapter"
+          p:failureThreshold="10" />
 </beans>
