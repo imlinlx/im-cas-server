@@ -158,42 +158,6 @@
     </contributor>
   </contributors>
 
-  <issueManagement>
-    <system>Jira</system>
-    <url>https://issues.jasig.org/browse/CAS</url>
-  </issueManagement>
-
-  <mailingLists>
-    <mailingList>
-      <name>cas-user</name>
-      <subscribe>join-cas-user@lists.jasig.org</subscribe>
-      <unsubscribe>leave-cas-user@lists.jasig.org</unsubscribe>
-      <post>cas-user@lists.jasig.org</post>
-      <archive>https://lists.wisc.edu/read/?forum=cas-user</archive>
-    </mailingList>
-    <mailingList>
-      <name>cas-dev</name>
-      <subscribe>join-cas-dev@lists.jasig.org</subscribe>
-      <unsubscribe>leave-cas-dev@lists.jasig.org</unsubscribe>
-      <post>cas-dev@lists.jasig.org</post>
-      <archive>https://lists.wisc.edu/read/?forum=cas-dev</archive>
-    </mailingList>
-    <mailingList>
-      <name>cas-announce</name>
-      <subscribe>join-cas-announce@lists.jasig.org</subscribe>
-      <unsubscribe>leave-cas-announce@lists.jasig.org</unsubscribe>
-      <post>cas-announce@lists.jasig.org</post>
-      <archive>https://lists.wisc.edu/read/?forum=cas-announce</archive>
-    </mailingList>
-  </mailingLists>
-
-  <scm>
-    <connection>scm:git:git@github.com:Jasig/cas.git</connection>
-    <developerConnection>scm:git:git@github.com:Jasig/cas.git</developerConnection>
-    <url>https://github.com/Jasig/cas</url>
-    <tag>v4.0.7</tag>
-  </scm>
-
   <distributionManagement>
     <site>
       <id>cas-site</id>
@@ -211,27 +175,13 @@
 
     <pluginManagement>
       <plugins>
-        <plugin>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-maven-plugin</artifactId>
-            <version>${maven-jetty-plugin.version}</version>
-            <configuration>
-                <jettyXml>${cs.dir}/etc/jetty/jetty.xml,${cs.dir}/etc/jetty/jetty-ssl.xml,${cs.dir}/etc/jetty/jetty-https.xml</jettyXml>
-                <systemProperties>
-                    <systemProperty>
-                        <name>org.eclipse.jetty.annotations.maxWait</name>
-                        <value>240</value>
-                    </systemProperty>
-                </systemProperties>
-                <!-- Works with remote debugging and mvn jetty:run-forked -->
-                <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n</jvmArgs>
-            </configuration>
-        </plugin>
+      
 
       </plugins>
     </pluginManagement>
 
     <plugins>
+      <!--
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
@@ -259,6 +209,7 @@
                </dependency>
             </dependencies>
       </plugin>
+      -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -427,6 +378,8 @@ pTSqrOnmqmUUnopqmvummmmmmUUnopqmvummmmmmUUA1jJ
             <exclude>**/*.conf</exclude>
             <exclude>**/*.doc</exclude>
             <exclude>**/*.jmx</exclude>
+            <exclude>**/com/imlinlx/auth/web/support/**</exclude>
+            <exclude>**/webapp/**</exclude>
           </excludes>
         </configuration>
         <executions>
