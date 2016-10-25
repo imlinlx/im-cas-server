@@ -1,4 +1,4 @@
-# Central Authentication Service (CAS) by Maven Overlay
+# Central Authentication Service (CAS) based on jasig cas 4.0.7
 
 ## Getting Started
 ### 证书配置
